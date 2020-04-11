@@ -1,49 +1,84 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Pasen</title>
-  <style type="text/css">
-    body {
-      margin: 0px;
-    }
+  <head>
+    <title>Pasen</title>
+    <style type="text/css">
+      body {
+        margin: 0px;
+        background-color:rgb(58,85,63)
+      }
 
-    img {
-      width:100%;
-      position:absolute;
-      z-index: 0;
-    }
+      img {
+        height:100vh;
+        position:absolute;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 0;
+      }
 
-    div {
-      position:absolute;
-      zborder: solid 2px red;
-      z-index: 12;
-      width: 3vw;
-      height: 3vw;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-    }
-  </style>
-  <script type="text/javascript">
-    function clicked(event) {
-      console.log(`<div onclick="eggClicked(this)" style="left:${(event.pageX / window.innerWidth) * 100}vw;top:${(event.pageY / window.innerWidth) * 100}vw;"></div>`)
-    }
+      div {
+        position:absolute;
+      }
 
-    function eggClicked(element) {
-      element.style.border = "1vw dotted white"
-    }
-  </script>
-</head>
-<body>
-  <img src="./IMG_0162.jpg" onclick="clicked(event)">
-  <div onclick="eggClicked(this)" style="left:19.226260257913246vw;top:64.24384525205159vw;"></div>
-  <div onclick="eggClicked(this)" style="left:28.956623681125436vw;top:34.93552168815944vw;"></div>
-  <div onclick="eggClicked(this)" style="left:44.66588511137163vw;top:18.17116060961313vw;"></div>
-  <div onclick="eggClicked(this)" style="left:46.658851113716295vw;top:30.94958968347011vw;"></div>
-  <div onclick="eggClicked(this)" style="left:50.87924970691676vw;top:13.364595545134819vw;"></div>
-  <div onclick="eggClicked(this)" style="left:58.38218053927315vw;top:27.198124267291913vw;"></div>
-  <div onclick="eggClicked(this)" style="left:58.61664712778429vw;top:65.53341148886284vw;"></div>
-  <div onclick="eggClicked(this)" style="left:64.47831184056272vw;top:42.555685814771394vw;"></div>
-  <div onclick="eggClicked(this)" style="left:68.11254396248535vw;top:18.053927315357562vw;"></div>
-  <div onclick="eggClicked(this)" style="left:87.80773739742087vw;top:26.025791324736225vw;"></div>
-</body>
+      #container {
+        z-index: 2;
+        left: 50%;
+        transform: translate(-50%);
+        height: 100vh;
+        width:133.3vh;
+      }
+
+      .egg {
+        z-index: 3;
+        position:absolute;
+        zborder: solid 2px red;
+        width: 6vh;
+        height: 6vh;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+
+      #message {
+        left: 50%;
+        z-index: 3;
+        color:white;
+        zbackground-color: green;
+        font-size: 2vw;
+        text-align: middle;
+        padding-left: 1vw;
+        padding-right: 1vw;
+      }
+    </style>
+    <script type="text/javascript">
+      set = new Set()
+      eggCount=0
+      function clicked(event) {
+        console.log(`<div class="egg" onclick="eggClicked(this, ${++eggCount})" style="left:${(event.pageX / window.innerHeight) * 100}vh;top:${(event.pageY / window.innerHeight) * 100}vh;"></div>`)
+      }
+
+      function eggClicked(element, number) {
+        size = set.size
+        set.add(number)
+
+        element.style.border = "1vw dotted white"
+        message.innerHTML = 10-set.size
+      }
+    </script>
+  </head>
+  <body>
+      <div id="message">10</div>
+      <img src="./IMG_0162.jpg">
+      <div id="container" onclick="clicked(event)">
+        <div class="egg" onclick="eggClicked(this, 1)" style="left:87.38738738738738vh;top:57.432432432432435vh;"></div>
+        <div class="egg" onclick="eggClicked(this, 2)" style="left:25.925925925925924vh;top:86.49237472766885vh;"></div>
+        <div class="egg" onclick="eggClicked(this, 3)" style="left:79.08496732026144vh;top:88.01742919389977vh;"></div>
+        <div class="egg" onclick="eggClicked(this, 4)" style="left:38.99782135076253vh;top:47.05882352941176vh;"></div>
+        <div class="egg" onclick="eggClicked(this, 5)" style="left:62.96296296296296vh;top:42.0479302832244vh;"></div>
+        <div class="egg" onclick="eggClicked(this, 6)" style="left:118.95424836601308vh;top:35.294117647058826vh;"></div>
+        <div class="egg" onclick="eggClicked(this, 7)" style="left:68.40958605664488vh;top:17.86492374727669vh;"></div>
+        <div class="egg" onclick="eggClicked(this, 8)" style="left:60.348583877995644vh;top:24.618736383442265vh;"></div>
+        <div class="egg" onclick="eggClicked(this, 9)" style="left:78.64923747276688vh;top:36.38344226579521vh;"></div>
+        <div class="egg" onclick="eggClicked(this, 10)" style="left:91.50326797385621vh;top:24.18300653594771vh;"></div>
+      </div>
+  </body>
 </html>
