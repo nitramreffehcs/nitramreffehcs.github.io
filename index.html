@@ -63,7 +63,12 @@
 
         element.style.border = "1px solid rgb(169,93,85)"
         element.style.backgroundColor = "rgb(213,146,135)"
-        message.innerHTML = 10-set.size
+
+        if(set.size === 10) {
+          message.innerHTML = 'Gefeliciteerd !'
+        } else {
+          message.innerHTML = 10-set.size
+        }
       }
     </script>
   </head>
