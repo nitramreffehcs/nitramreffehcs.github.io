@@ -31,19 +31,20 @@
       .egg {
         z-index: 3;
         position:absolute;
-        zborder: solid 2px red;
+        zborder: solid 2px white;
+        zbackground-color: rgb(213,146,135);
         width: 6vh;
         height: 6vh;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
+        border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%;
+        transform: translate(-50%, -50%) rotate(-45deg) ;
       }
 
       #message {
         left: 50%;
         z-index: 3;
-        color:rgb(157,30,63); 
+        color:rgb(213,146,135); 
         font-size: 4vw;
-        text-shadow: -1px -1px 0 rgb(185,182,143), 1px -1px 0 rgb(185,182,143), -1px 1px 0 rgb(185,182,143), 1px 1px 0 rgb(185,182,143);
+        text-shadow: -1px -1px 0 rgb(169,93,85), 1px -1px 0 rgb(169,93,85), -1px 1px 0 rgb(169,93,85), 1px 1px 0 rgb(169,93,85);
         transform: translate(-50%);
         padding-left: 1vw;
         padding-right: 1vw;
@@ -60,7 +61,8 @@
         size = set.size
         set.add(number)
 
-        element.style.border = "1vw dotted white"
+        element.style.border = "1px solid rgb(169,93,85)"
+        element.style.backgroundColor = "rgb(213,146,135)"
         message.innerHTML = 10-set.size
       }
     </script>
