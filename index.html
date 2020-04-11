@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pasen</title>
+  <style type="text/css">
+    body {
+      margin: 0px;
+    }
+
+    img {
+      width:100%;
+      position:absolute;
+      z-index: 0;
+    }
+
+    div {
+      position:absolute;
+      zborder: solid 2px red;
+      z-index: 12;
+      width: 3vw;
+      height: 3vw;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+  </style>
+  <script type="text/javascript">
+    function clicked(event) {
+      console.log(`<div onclick="eggClicked(this)" style="left:${(event.pageX / window.innerWidth) * 100}vw;top:${(event.pageY / window.innerWidth) * 100}vw;"></div>`)
+    }
+
+    function eggClicked(element) {
+      element.style.border = "1vw dotted white"
+    }
+  </script>
+</head>
+<body>
+  <img src="./IMG_0162.jpg" onclick="clicked(event)">
+  <div onclick="eggClicked(this)" style="left:19.226260257913246vw;top:64.24384525205159vw;"></div>
+  <div onclick="eggClicked(this)" style="left:28.956623681125436vw;top:34.93552168815944vw;"></div>
+  <div onclick="eggClicked(this)" style="left:44.66588511137163vw;top:18.17116060961313vw;"></div>
+  <div onclick="eggClicked(this)" style="left:46.658851113716295vw;top:30.94958968347011vw;"></div>
+  <div onclick="eggClicked(this)" style="left:50.87924970691676vw;top:13.364595545134819vw;"></div>
+  <div onclick="eggClicked(this)" style="left:58.38218053927315vw;top:27.198124267291913vw;"></div>
+  <div onclick="eggClicked(this)" style="left:58.61664712778429vw;top:65.53341148886284vw;"></div>
+  <div onclick="eggClicked(this)" style="left:64.47831184056272vw;top:42.555685814771394vw;"></div>
+  <div onclick="eggClicked(this)" style="left:68.11254396248535vw;top:18.053927315357562vw;"></div>
+  <div onclick="eggClicked(this)" style="left:87.80773739742087vw;top:26.025791324736225vw;"></div>
+</body>
+</html>
